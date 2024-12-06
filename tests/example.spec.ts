@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const GAME_LOAD_TIMEOUT = 60000;
-const DEFAULT_PAGE_PAUSE = 3000;
+const DEFAULT_PAGE_PAUSE = 2000;
 
 test('go to game', async ({ page, context }) => {
   await page.goto('https://sandbox.itechhub.io/');
@@ -50,7 +50,7 @@ test('go to game', async ({ page, context }) => {
   await gamePage.mouse.click(700, 630) // jackpot popup btn click
   await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
 
-  await gamePage.mouse.click(700, 20) // cheets open
+  await gamePage.mouse.click(650, 30) // cheets open
   await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
 
   expect(gamePage).toBeDefined();
