@@ -1,0 +1,18 @@
+{
+  "name": "localization-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx playwright test",
+    "report": "npx playwright show-report",
+    "start:ui": "npx playwright test --ui"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.1"
+  }
+}
