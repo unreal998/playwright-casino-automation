@@ -139,8 +139,7 @@ async function gameFlow(gamePage: Page) {
 }
 
 const languages = [
-  'en', 'es', 'ru', 'zh', 'th', 'tr', 'hu', 'uk', 'pt', 'fr', 'ro', 'sr', 'et', 'bg', 'sv', 'vi', 'fl', 'nl', 'it', 'de', 
-  'pt-br', 'en_st'
+  'th', 'tr', 'hu', 'uk'
 ]
 
 languages.forEach(item => {
