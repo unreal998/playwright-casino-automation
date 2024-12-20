@@ -1,0 +1,3 @@
+export const GAME_LOAD_TIMEOUT = 200000;
+export const DEFAULT_PAGE_PAUSE = 2000;
+export const FREE_SPIN_TIMEOUT = 60000

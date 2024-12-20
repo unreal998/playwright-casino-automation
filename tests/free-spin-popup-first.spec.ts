@@ -1,7 +1,5 @@
 import { test, expect, Page } from '@playwright/test';
-
-const GAME_LOAD_TIMEOUT = 120000;
-const DEFAULT_PAGE_PAUSE = 2000;
+import { DEFAULT_PAGE_PAUSE, FREE_SPIN_TIMEOUT, GAME_LOAD_TIMEOUT } from '../constants';
 
 async function adminFlow(page: Page, language: string) {
   await page.goto('https://sandbox.itechhub.io/');
@@ -122,20 +120,30 @@ async function gameFlow(gamePage: Page) {
 
   await gamePage.mouse.click(1200, 600) // spin button
 
-  await gamePage.waitForTimeout(30000)
+  await gamePage.waitForTimeout(FREE_SPIN_TIMEOUT)
 
   await gamePage.mouse.click(600, 550) // continue button click
 
-  await gamePage.mouse.click(1200, 600) // spin button
-  await gamePage.mouse.click(1200, 600) // spin button
-  await gamePage.mouse.click(1200, 600) // spin button
-  await gamePage.mouse.click(1200, 600) // spin button
-  await gamePage.mouse.click(1200, 600) // spin button
-  await gamePage.mouse.click(1200, 600) // spin button
-  await gamePage.mouse.click(1200, 600) // spin button
-  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
 
-  await gamePage.waitForTimeout(30000)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+  await gamePage.mouse.click(1200, 600) // spin button
+  await gamePage.waitForTimeout(DEFAULT_PAGE_PAUSE)
+
+  await gamePage.waitForTimeout(FREE_SPIN_TIMEOUT * 2)
 }
 
 const languages = [
